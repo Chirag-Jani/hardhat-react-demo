@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# Sample Hardhat + ReactJS Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Step by Step process
 
-## Available Scripts
+npm install hardhat
+npm install ethers @nomicfoundation/hardhat-toolbox
+npx hardhat init (to initialize initial code - select 'create simple javascript project')
 
-In the project directory, you can run:
+- specify the configuration in 'hardhat.config.js' file
+- write your smart contract under the 'contract' folder
+- write script to deploy the contract under the 'scripts' folder
 
-### `npm start`
+- npx hardhat compile (to compile the smart contract)
+- npx hardhat node (to run the local blockchain in order to deploy our smart contract and later interact with it)
+- npx hardhat test (to test the smart contract before deploying - ignore for this project)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Now let's create the frontend before deploying our smart contract
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- delete the 'README.md' file
+  (otherwise it will cause an error while trying to create a react app as it will also create a README.md file and then both with clash with each other)
+- open the terminal and write, 'npx create-react-app <app-name>' to get the initial boiler plate code ready
+- now, we can deploy the contract (note that we have to set the 'artifacts' path before deployment - see 'hardhat.config.js' file)
+- run 'npx hardhat run 'script/deploy.js'
+- It will print the deployed address
+  (keep that safe as we are going to use it in 'App.js' file under 'src' folder)
+- Now, we can create the frontend and call smart contract functions from frontend
+  (code and instructions available in 'App.js' fild under 'src' folder)
+- For the design purpose, I have used Bootstrap which is included via link in 'index.html' file under 'public' folder.
+  (just copy and paste this in your index.html file)
+  <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
