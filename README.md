@@ -19,7 +19,7 @@ npx hardhat init (to initialize initial code - select 'create simple javascript 
 - delete the 'README.md' file
   (otherwise it will cause an error while trying to create a react app as it will also create a README.md file and then both with clash with each other)
 
-- open the terminal and write, 'npx create-react-app <app-name>' to get the initial boiler plate code ready
+- open the terminal and write, 'npx create-react-app app-name' to get the initial boiler plate code ready
 
 - now, we can deploy the contract (note that we have to set the 'artifacts' path before deployment - see 'hardhat.config.js' file)
 
@@ -32,10 +32,3 @@ npx hardhat init (to initialize initial code - select 'create simple javascript 
   (code and instructions available in 'App.js' fild under 'src' folder)
 
 - For the design purpose, I have used Bootstrap which is included via link in 'index.html' file under 'public' folder.
-  (just copy and paste this in your index.html file)
-  "<link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />"
